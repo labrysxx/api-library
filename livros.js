@@ -29,7 +29,8 @@ async function criaLivro(request, response) {
     const novoLivro = new Livro({
         titulo: request.body.titulo,
         autor: request.body.autor,
-        citacao: request.body.citacao
+        categoria: request.body.categoria,
+        recomendador: request.body.recomendador
     })
 
     try {
@@ -53,8 +54,12 @@ async function corrigeLivro(request, response) {
             livroEncontrado.autor = request.body.autor
         }
 
-        if(request.body.citacao) {
-            livroEncontrado.citacao = request.body.citacao
+        if(request.body.categoria) {
+            livroEncontrado.categoria = request.body.categoria
+        }
+
+        if(request.body.recomendador) {
+            livroEncontrado.recomendador = request.body.recomendador
         }
 
         const livroAtualizadoNoBancoDeDados = await mulherEncontrada.save()

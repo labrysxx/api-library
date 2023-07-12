@@ -8,6 +8,14 @@ const LivroSchema = new mongoose.Schema({
     autor: {
         type: String,
         required: true
+    },
+    categoria: {
+        type: String,
+        required: true
+    },
+    recomendador: {
+        type: String,
+        required: true
     }
 })
 
